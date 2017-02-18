@@ -410,6 +410,8 @@ public class FFMpegVideo extends Player {
 					transcodeOptions.add("mp4");
 					transcodeOptions.add("-movflags");
 					transcodeOptions.add("frag_keyframe+empty_moov");
+					transcodeOptions.add("-seekable");
+					transcodeOptions.add("1");
 				} else if (renderer.isTranscodeToMPEGTS()) {
 					transcodeOptions.add("mpegts");
 				} else {

@@ -1310,7 +1310,7 @@ public class RendererConfiguration extends UPNPHelper.Renderer {
 			// Use the supported information in the configuration to determine the transcoding mime type.
 			if (HTTPResource.VIDEO_TRANSCODE.equals(mimeType)) {
 				if (isTranscodeToMP4H264AAC()) {
-					matchedMimeType = getFormatConfiguration().match(FormatConfiguration.MP4,    FormatConfiguration.H264,  FormatConfiguration.AAC);
+					matchedMimeType = getFormatConfiguration().match(FormatConfiguration.MP4,    FormatConfiguration.H264,  FormatConfiguration.AAC_LC);
 				} else if (isTranscodeToMP4H264AC3()) {
 					matchedMimeType = getFormatConfiguration().match(FormatConfiguration.MP4,    FormatConfiguration.H264,  FormatConfiguration.AC3);
 				} else if (isTranscodeToMPEGTSH264AC3()) {

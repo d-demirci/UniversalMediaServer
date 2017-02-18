@@ -2296,8 +2296,6 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 				} else if (mime.equals("video/vnd.dlna.mpeg-tts")) {
 					// patters - on Sony BDP m2ts clips aren't listed without this
 					dlnaOrgPnFlags = "DLNA.ORG_PN=" + getMPEG_TS_EULocalizedValue(localizationValue, media.isHDVideo());
-				} else if (mime.equals(MP4_TYPEMIME)) {
-					dlnaOrgPnFlags = "*";
 				} else if (mime.equals(JPEG_TYPEMIME)) {
 					int width = media.getWidth();
 					int height = media.getHeight();
@@ -2624,6 +2622,8 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 					if (media.isVideo()) {
 						if (mediaRenderer.isTranscodeToMPEGTS()) {
 							transcodedExtension = "_transcoded_to.ts";
+						} else if (mediaRenderer.isTranscodeToMP4()) {
+							transcodedExtension = "_transcoded_to.mp4";
 						} else if (mediaRenderer.isTranscodeToWMV() && !xbox360) {
 							transcodedExtension = "_transcoded_to.wmv";
 						} else {

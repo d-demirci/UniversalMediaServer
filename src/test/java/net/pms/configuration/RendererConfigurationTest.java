@@ -138,18 +138,13 @@ public class RendererConfigurationTest {
 		testHeaders("Showtime 4", "User-Agent: Showtime PS3 4.2");
 
 		// Sony PlayStation 3:
-		testHeaders(
-			"PlayStation 3",
-			"User-Agent: PLAYSTATION 3",
-			"X-AV-Client-Info: av=5.0; cn=\"Sony Computer Entertainment Inc.\"; mn=\"PLAYSTATION 3\"; mv=\"1.0\";"
-		);
+		testHeaders("PlayStation 3", "User-Agent: PLAYSTATION 3", "PlayStation 3", "X-AV-Client-Info: av=5.0; cn=\"Sony Computer Entertainment Inc.\"; mn=\"PLAYSTATION 3\"; mv=\"1.0\";");
 
 		// Sony PlayStation 4:
-		testHeaders(
-			"PlayStation 4",
-			"User-Agent: PS4Application libhttp/1.000 (PS4) libhttp/2.51 (PlayStation 4)",
-			"User-Agent: libhttp/2.51 (PlayStation 4)"
-		);
+		testHeaders("PlayStation 4", "User-Agent: MediaPlayer/2.50 UPnP/1.0 DLNADOC/1.50 (PlayStation 4)");
+
+		// Sony PlayStation 4 Pro:
+		testHeaders("PlayStation 4 Pro", "User-Agent: MediaPlayer/3.00 UPnP/1.0 DLNADOC/1.50 (PlayStation 4 Pro)");
 
 		// Sony Xperia:
 		testHeaders("Sony Xperia Z/ZL/ZQ/Z1/Z2", "X-AV-Client-Info: C6603");
